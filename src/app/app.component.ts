@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { SelectionPanelComponent } from "./selection-panel/selection-panel.component";
+import { DisplayPanelComponent } from "./display-panel/display-panel.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [],
+  imports: [SelectionPanelComponent, DisplayPanelComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
