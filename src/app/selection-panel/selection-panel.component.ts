@@ -2,11 +2,11 @@ import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-selection-panel',
-  standalone: true,
-  imports: [NgFor],
-  templateUrl: './selection-panel.component.html',
-  styleUrl: './selection-panel.component.css'
+    selector: 'app-selection-panel',
+    imports: [NgFor],
+    standalone: true,
+    templateUrl: './selection-panel.component.html',
+    styleUrl: './selection-panel.component.css'
 })
 export class SelectionPanelComponent {
   items = {
