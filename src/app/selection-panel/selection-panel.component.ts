@@ -1,38 +1,16 @@
 
 
-import { NgFor } from '@angular/common';
-import { Component } from '@angular/core';
+import { NgClass, NgFor } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { ChefStore } from '../store/chef.store';
 
 @Component({
     selector: 'app-selection-panel',
-    imports: [NgFor],
+    imports: [NgFor, NgClass],
     standalone: true,
     templateUrl: './selection-panel.component.html',
     styleUrl: './selection-panel.component.css'
 })
 export class SelectionPanelComponent {
-  items = [
-    {
-      category: 'carbs',
-      label: 'Carbohydrates',
-      foods: ['Rice', 'Potatoes', 'Bread', 'Sweet Potatoes']
-    },
-    {
-      category: 'fruit',
-      label: 'Fruits',
-      foods: ['Oranges', 'Apples', 'Banana', 'Strawberries']
-    },
-    {
-      category: 'veg',
-      label: 'Vegetables',
-      foods: ['Peas', 'Carrots', 'Broccoli', 'Cabbage']
-    },
-    {
-      category: 'meat',
-      label: 'Meats & Protein',
-      foods: ['Beef', 'Chicken', 'Fish', 'Pork']
-    }
-  ];
-
-  categories = Object.keys(this.items)
+  readonly store = inject(ChefStore)
 }
