@@ -1,5 +1,10 @@
 <div class="flex flex-row w-full">
     <app-selection-panel class="w-1/2"/>
-    <app-display-panel class="w-1/2"/>  
-  
+    
+    @if (!store.displayMeal().strMeal) {
+        <app-meal-grid class="w-1/2"/>
+        
+    }@else {
+        <app-display-panel class="w-1/2"/>
+    }
 </div>

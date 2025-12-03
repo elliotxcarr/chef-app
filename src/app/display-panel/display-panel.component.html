@@ -1,16 +1,11 @@
-<div class=" overflow-scroll h-screen">
-    <div class="grid grid-cols-3" >
-        <div class="flex flex-col w-44 p-2 hover:cursor-pointer" *ngFor="let meal of store.meals()" (click)="store.mealSelected(meal.strMeal)">
-            
-            <img src="{{meal.strMealThumb}}" class="w-full h-auto">
-            <div class="text-center bg-gray-300 p-1">{{meal.strMeal}}</div>
-        </div>
-        
+<div class="h-screen">
+    <div class="hover:cursor-pointer bg-blue-500 w-20 p-1 text-center" (click)="store.clearDisplay()">Back</div>
+    <div class="font-bold text-2xl">
+        {{store.displayMeal().strMeal}}
     </div>
-
-    <div *ngIf="store.displayMeal()">
+    @for (item of ingredients(); track $index) {
         <div>
-            {{store.displayMeal().strMeal}}
+            {{item}}
         </div>
-    </div>
+    }
 </div>

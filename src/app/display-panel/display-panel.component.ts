@@ -1,10 +1,10 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { ChefStore } from '../store/chef.store';
-import { NgFor, NgIf } from '@angular/common';
+import { getMealIngredients } from '../shared/utilities';
 
 @Component({
     selector: 'app-display-panel',
-    imports: [NgFor,NgIf],
+    imports: [],
     standalone:true,
     templateUrl: './display-panel.component.html',
     styleUrl: './display-panel.component.css'
@@ -12,4 +12,5 @@ import { NgFor, NgIf } from '@angular/common';
 export class DisplayPanelComponent {
     readonly store = inject(ChefStore);
 
+    ingredients = computed(() => getMealIngredients(this.store.displayMeal())) 
 }
