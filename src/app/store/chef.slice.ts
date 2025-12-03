@@ -1,4 +1,3 @@
-import { ingredients } from "../ingredients"
 import { Ingredient, Meal } from "../meal"
 
 export interface ChefSlice{
@@ -7,12 +6,6 @@ export interface ChefSlice{
     meals: Meal[],
     displayMeal: Meal,
     loading: boolean,
-}
-
-interface Category{
-    category: string,
-    label: string,
-    foods: string[]
 }
 export const initialChefSlice: ChefSlice= {
     selectedIngs: [],
