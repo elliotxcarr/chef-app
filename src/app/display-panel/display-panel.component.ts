@@ -1,10 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { ChefStore } from '../store/chef.store';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
     selector: 'app-display-panel',
-    imports: [NgFor],
+    imports: [NgFor,NgIf],
     standalone:true,
     templateUrl: './display-panel.component.html',
     styleUrl: './display-panel.component.css'

@@ -11,4 +11,7 @@ export class MealService {
   mealLookup(ing:string){
     return this.http.get<any>(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ing}`)
   }
+  getSingleMeal(mealName: string){
+    return this.http.get<any>(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`)
+  }
 }

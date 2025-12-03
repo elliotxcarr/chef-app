@@ -1,10 +1,16 @@
 <div class=" overflow-scroll h-screen">
     <div class="grid grid-cols-3" >
-        <div class="flex flex-col w-44 p-2" *ngFor="let meal of store.meals()">
+        <div class="flex flex-col w-44 p-2 hover:cursor-pointer" *ngFor="let meal of store.meals()" (click)="store.mealSelected(meal.strMeal)">
             
             <img src="{{meal.strMealThumb}}" class="w-full h-auto">
             <div class="text-center bg-gray-300 p-1">{{meal.strMeal}}</div>
         </div>
         
+    </div>
+
+    <div *ngIf="store.displayMeal()">
+        <div>
+            {{store.displayMeal().strMeal}}
+        </div>
     </div>
 </div>

@@ -20,7 +20,9 @@ export const ChefEvents = eventGroup({
   source: 'ChefStore',
   events:{
     searchMeals: type<string>(),
-    fetchedMeals: type<Meal[]>()
+    fetchedMeals: type<Meal[]>(),
+    mealSelected: type<string>(),
+    mealRecived: type<Meal>()
   }
 })
 
@@ -39,8 +41,10 @@ export const ChefStore = signalStore(
   })),
   withMethods((store) => {
     const addIng = (ing:string) => store._dispatcher.dispatch(ChefEvents.searchMeals(ing))
+    const mealSelected = (mealName:string) => store._dispatcher.dispatch(ChefEvents.mealSelected(mealName))
     return {
       addIng,
+      mealSelected,
       clearIngs: () => patchState(store, { selectedIngs: [] }, {meals: []}),
     };
   })

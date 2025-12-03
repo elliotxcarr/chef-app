@@ -4,7 +4,8 @@ import { Meal } from "../meal"
 export interface ChefSlice{
     selectedIngs : string[],
     items: Category[],
-    meals: Meal[]
+    meals: Meal[],
+    displayMeal: Meal
 }
 
 interface Category{
@@ -15,5 +16,6 @@ interface Category{
 export const initialChefSlice: ChefSlice= {
     selectedIngs: [],
     items: ingredients,
-    meals:[]
+    meals:[],
+    displayMeal: {} as Meal
 }

@@ -26,7 +26,18 @@ export function withChefEffects<_>(){
               error: err => console.error(err)
             })
           ))
+        ),
+        mealSelected$: _events.on(ChefEvents.mealSelected).pipe(
+          switchMap(({payload: mealName}) => _mealService.getSingleMeal(mealName).pipe(
+            tapResponse({
+              next: res => {
+                _dispatcher.dispatch(ChefEvents.mealRecived(res.meals[0]))
+              },
+              error: err => console.error(err)
+            })
+          ))
         )
+
       }
     })
   )
