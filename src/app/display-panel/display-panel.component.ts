@@ -11,6 +11,5 @@ import { getMealIngredients } from '../shared/utilities';
 })
 export class DisplayPanelComponent {
     readonly store = inject(ChefStore);
-
     ingredients = computed(() => getMealIngredients(this.store.displayMeal())) 
 }

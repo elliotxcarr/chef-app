@@ -1,5 +1,3 @@
-
-
 import { NgClass } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ChefStore } from '../store/chef.store';
