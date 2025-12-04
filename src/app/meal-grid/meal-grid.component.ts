@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { ChefStore } from '../store/chef.store';
+import { SpinnerComponent } from "../shared/spinner/spinner.component";
 
 @Component({
   selector: 'app-meal-grid',
-  imports: [],
+  imports: [SpinnerComponent],
   templateUrl: './meal-grid.component.html',
   styleUrl: './meal-grid.component.css',
 })

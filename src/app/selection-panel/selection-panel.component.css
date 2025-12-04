@@ -1,0 +1,21 @@
+@import 'tailwindcss';
+#ingButton{
+  @apply 
+  flex 
+  p-1 
+  text-center 
+  items-center 
+  justify-center 
+  w-full 
+  outline-1
+  outline-gray-400
+  rounded-xl
+  hover:bg-light-sage
+  duration-200
+  hover:cursor-pointer
+  m-2
+}
+
+@theme {
+  --color-light-sage: #c0f296;
+}

@@ -8,6 +8,7 @@ import { Meal } from '../meal';
 })
 export class MealService {
 
+  private readonly ALPHABET = 'abcdefghijklmnopqrstuvwxyz'.split('');
   private readonly http = inject(HttpClient)
 
   mealLookup(ing:string){
@@ -19,10 +20,9 @@ export class MealService {
   getIngredients(){
     return this.http.get<any>(`https://www.themealdb.com/api/json/v1/1/list.php?i=list`)
   }
-  alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
   getMeals(): Observable<{ meals: Meal[] }> {
-    const requests = this.alphabet.map(letter =>
+    const requests = this.ALPHABET.map(letter =>
       this.http.get<{ meals: Meal[] | null }>(
         `https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`
       )
